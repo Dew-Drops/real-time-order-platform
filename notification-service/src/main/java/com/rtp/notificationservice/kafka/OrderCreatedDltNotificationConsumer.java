@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 
 
 @Component
-public class OrderCreatedDltConsumer {
+public class OrderCreatedDltNotificationConsumer {
 
     private static final Logger log =
-            LoggerFactory.getLogger(OrderCreatedDltConsumer.class);
+            LoggerFactory.getLogger(OrderCreatedDltNotificationConsumer.class);
 
     @KafkaListener(
             topics = "order.created.notification.DLT",

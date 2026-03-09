@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 
 
 @Component
-public class OrderCreatedDltConsumer {
+public class OrderCreatedDltPaymentConsumer {
 
     private static final Logger log =
-            LoggerFactory.getLogger(OrderCreatedDltConsumer.class);
+            LoggerFactory.getLogger(OrderCreatedDltPaymentConsumer.class);
 
     @KafkaListener(
             topics = "order.created.payment.DLT",
@@ -21,7 +21,7 @@ public class OrderCreatedDltConsumer {
     )
     public void onDlt(String rawJson,
                       @Header(value = KafkaHeaders.RECEIVED_KEY, required = false) String key) {
-        log.error("DLT received message key={}, payload={}", key, rawJson);
+        log.error("Payment Consumer DLT received message key={}, payload={}", key, rawJson);
     }
 }
 
